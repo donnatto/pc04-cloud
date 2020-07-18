@@ -12,7 +12,7 @@
 
 ### Metodos de Banking
 
-POST a http://localhost:8080/api/sqs/payment para colocar ordenes de pago en la cola con el siguiente Json como modelo (no se envia el transactionId)
+**POST a http://localhost:8080/api/sqs/payment para colocar ordenes de pago en la cola con el siguiente Json como modelo (no se envia transactionId)**
 
 INPUT
 ```json
@@ -32,7 +32,7 @@ OUTPUT
 Order received
 ```
 
-GET a http://localhost:8080/api/sqs/payment para ver las ordenes de pago
+**GET a http://localhost:8080/api/sqs/payment para ver las ordenes de pago**
 
 OUTPUT
 ```json
@@ -70,7 +70,7 @@ OUTPUT
 
 ### Metodos de Accounting
 
-POST a http://localhost:8080/api/dynamo/process para procesar las ordenes de pago y subirlas a una tabla de DynamoDB.
+**POST a http://localhost:8080/api/dynamo/process para procesar las ordenes de pago y subirlas a una tabla de DynamoDB.**
 
 OUTPUT
 ```json
