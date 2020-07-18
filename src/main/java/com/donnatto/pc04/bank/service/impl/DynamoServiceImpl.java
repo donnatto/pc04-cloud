@@ -19,12 +19,10 @@ public class DynamoServiceImpl implements DynamoService {
     @Value("${AWS_TABLE_NAME}")
     String tableName;
 
-    private ObjectMapper mapper;
     private DynamoDB db;
 
     @Autowired
-    public DynamoServiceImpl(ObjectMapper mapper, DynamoDB db) {
-        this.mapper = mapper;
+    public DynamoServiceImpl(DynamoDB db) {
         this.db = db;
     }
 

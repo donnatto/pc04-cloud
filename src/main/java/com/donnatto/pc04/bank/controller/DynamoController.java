@@ -19,18 +19,17 @@ public class DynamoController {
 
     private DynamoService dbService;
     private SqsService sqsService;
-    private ObjectMapper mapper;
 
     @Autowired
-    public DynamoController(DynamoService dbService, SqsService sqsService, ObjectMapper mapper) {
+    public DynamoController(DynamoService dbService, SqsService sqsService) {
         this.dbService = dbService;
         this.sqsService = sqsService;
-        this.mapper = mapper;
     }
 
     @PostMapping("/process")
     public String processPayments() {
-        String response = null;
+        String response;
+        int count = 0;
 
         log.info("Initiating payment processing");
         try {
@@ -40,8 +39,10 @@ public class DynamoController {
                  payments) {
                 dbService.loadData(payment);
                 log.info("loaded one payment");
+                count++;
             }
-            response = "Payments received";
+            log.info("Finished loading payments, total of payments processed: {}", count);
+            response = "Payments received: " + count;
         } catch (Exception e) {
             log.error("Error processing payments: {}", e.getMessage());
             response = "Error processing payments";
