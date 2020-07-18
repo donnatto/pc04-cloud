@@ -12,6 +12,26 @@
 
 ### Metodos de Banking
 
+POST a http://localhost:8080/api/sqs/payment para colocar ordenes de pago en la cola con el siguiente Json como modelo (no se envia el transactionId)
+
+INPUT
+```json
+{
+    "documentNumber": "47525859",
+    "firstName": "Edwin",
+    "lastName": "Dominguez",
+    "payment": "payment",
+    "transactionAmount": "475.00",
+    "transactionDate": "29-06"
+        
+}
+```
+
+OUTPUT
+```
+Order received
+```
+
 GET a http://localhost:8080/api/sqs/payment para ver las ordenes de pago
 
 OUTPUT
@@ -46,25 +66,6 @@ OUTPUT
     }
 ]
 
-```
-POST a http://localhost:8080/api/sqs/payment para colocar ordenes de pago en la cola con el siguiente Json como modelo (no se envia el transactionId)
-
-INPUT
-```json
-{
-    "documentNumber": "47525859",
-    "firstName": "Edwin",
-    "lastName": "Dominguez",
-    "payment": "payment",
-    "transactionAmount": "475.00",
-    "transactionDate": "29-06"
-        
-}
-```
-
-OUTPUT
-```
-Order received
 ```
 
 ### Metodos de Accounting
