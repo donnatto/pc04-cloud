@@ -1,5 +1,9 @@
 # pc04-dsc-2020-1-donnatto
 
+## Arquitectura
+
+[![Arquitectura del Programa](architecture.png)](https://app.cloudcraft.co/view/13dc46e6-d60c-44df-813f-b33c5c49e1e2?key=jFP4513T1VEPE3VNVsRSWA)
+
 ## Indicaciones para compilar
 
 ### Configurar en variables de entorno:
@@ -73,6 +77,6 @@ OUTPUT
 **POST a http://localhost:8080/api/dynamo/process para procesar las ordenes de pago y subirlas a una tabla de DynamoDB.**
 
 OUTPUT
-```json
+```
 Payments received: 3
 ```
